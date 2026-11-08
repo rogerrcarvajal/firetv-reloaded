@@ -3,9 +3,13 @@ $adb = "c:\xampp\htdocs\amazon-firetv\tools\platform-tools\adb.exe"
 $logsDir = "c:\xampp\htdocs\amazon-firetv\logs"
 $debloatLog = "$logsDir\debloated_packages.txt"
 
-# Paquetes de telemetría, publicidad innecesaria y servicios pesados de fondo verificados para Fire OS 7 / 8
+# Paquetes de telemetría, publicidad innecesaria, Shop on Amazon y servicios pesados de fondo verificados
 # NOTA: Se conserva 100% intacto com.amazon.tv.launcher para mantener la pantalla de inicio original.
 $bloatPackages = @(
+    "com.amazon.shoptv.firetv.client",
+    "com.amazon.shoptv.client",
+    "com.amazon.hybridadidservice",
+    "com.amazon.whad",
     "com.amazon.advertising.firetv",
     "com.amazon.device.logmanager",
     "com.amazon.client.metrics",
@@ -37,18 +41,29 @@ $disabledCount = 0
 $debloatedList = [System.Collections.Generic.List[string]]::new()
 
 foreach ($pkg in $bloatPackages) {
-    Write-Host -NoNewline "[*] Congelando $pkg ... "
-    $res = (& $adb shell pm disable-user --user 0 $pkg 2>&1).Trim()
-    if ($res -like "*disabled-user*" -or $res -like "*new state: disabled*") {
+    Write-Host -NoNewline "[*] Procesando $pkg ... "
+    $res = (& $adb shell pm disable-user --user 0 $pkg 2>&1)
+    $resStr = ($res | Out-String).Trim()
+    if ($resStr -like "*disabled-user*" -or $resStr -like "*new state: disabled*") {
         Write-Host "DESACTIVADO CON EXITO [OK]" -ForegroundColor Green
         $debloatedList.Add($pkg)
         $disabledCount++
-    } elseif ($res -like "*not installed*") {
+    } elseif ($resStr -like "*not installed*" -or $resStr -like "*Unknown package*") {
         Write-Host "NO PRESENTE (Omitido)" -ForegroundColor DarkGray
+    } elseif ($resStr -like "*protected package*") {
+        Write-Host "PROTEGIDO POR FIRE OS (Omitido)" -ForegroundColor Yellow
     } else {
-        Write-Host "Resultado: $res" -ForegroundColor Gray
+        Write-Host "Resultado: $resStr" -ForegroundColor Gray
     }
 }
+
+Write-Host "`n[*] Forzando opt-out de publicidad y apagando reproduccion automatica..." -ForegroundColor Cyan
+& $adb shell settings put secure advertising_id_opt_out 1
+& $adb shell settings put global ad_tracking_enabled 0
+& $adb shell settings put secure limit_ad_tracking 1
+& $adb shell settings put secure non_amz_limit_ad_tracking 1
+& $adb shell settings put global com.amazon.tv.settings.featured_item_video_enabled 0
+& $adb shell settings put global com.amazon.tv.settings.featured_item_video_volume 0.0
 
 if (-not (Test-Path $logsDir)) {
     New-Item -ItemType Directory -Force -Path $logsDir | Out-Null
@@ -56,6 +71,6 @@ if (-not (Test-Path $logsDir)) {
 $debloatedList | Set-Content -Path $debloatLog -Encoding utf8
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
-Write-Host "[+] Proceso completado: $disabledCount servicios de telemetria y anuncios desactivados." -ForegroundColor Green
+Write-Host "[+] Proceso completado: $disabledCount servicios desactivados y banners comerciales erradicados." -ForegroundColor Green
 Write-Host "    Registro guardado para restauracion en: $debloatLog" -ForegroundColor Gray
 Write-Host "==========================================================" -ForegroundColor Cyan
