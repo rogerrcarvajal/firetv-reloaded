@@ -1,0 +1,2 @@
+# Coloca aquí tus archivos .apk para instalarlos directamente en Fire TV mediante:
+# powershell -ExecutionPolicy Bypass -File scripts/05_install_apk.ps1

@@ -1,0 +1,17 @@
+# Binarios y herramientas portables (descargados por setup_tools.ps1)
+tools/platform-tools/
+tools/*.zip
+
+# Capturas de pantalla temporales y archivos locales
+*.png
+*.jpg
+firetv_ip.txt
+
+# Logs con información privada
+logs/*.log
+logs/packages_*.txt
+
+# Sistema y entornos
+.DS_Store
+Thumbs.db
+*.tmp

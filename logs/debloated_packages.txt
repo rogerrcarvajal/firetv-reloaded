@@ -1,0 +1,13 @@
+﻿com.amazon.ods.kindleconnect
+com.amazon.shopping.myx
+com.amazon.shpm
+com.amazon.kor.soho
+com.amazon.device.sale.service
+com.amazon.device.sync
+com.amazon.tahoe
+com.amazon.tv.nimh
+com.amazon.whisperjoin.middleware.fl
+com.amazon.altair.services
+com.amazon.bueller.music
+com.amazon.bueller.photos
+com.amazon.kindle.unifiedSearch

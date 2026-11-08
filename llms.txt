@@ -1,0 +1,32 @@
+# FireTV-Reloaded Suite
+> Suite automatizada de optimización, desparasitación de telemetría, bloqueo de anuncios y sideloading para dispositivos Amazon Fire TV (Lite, 4K, 4K MAX y Cube) desarrollada en el entorno Google Antigravity con Gemini 3.8.
+
+## Descripción General
+FireTV-Reloaded es una suite de ingeniería creada para conectar computadoras de control con dispositivos Amazon Fire TV vía Android Debug Bridge (ADB inalámbrico). Permite optimizar el rendimiento del hardware, erradicar el consumo innecesario de recursos por parte de telemetría de compras/anuncios de Amazon, proteger la privacidad del usuario a nivel de red con DNS privado y permitir la instalación directa de aplicaciones (APKs) sin intermediarios lentos o invasivos como Downloader.
+
+## Especificaciones y Compatibilidad
+- **Sistemas Operativos compatibles:** Fire OS 6 (Android 7.1), Fire OS 7 (Android 9), Fire OS 8 (Android 11).
+- **Dispositivos soportados:** Fire TV Stick Lite, Fire TV Stick 4K (1ª y 2ª Gen), Fire TV Stick 4K MAX (1ª y 2ª Gen), Fire TV Cube (2ª y 3ª Gen).
+- **Entorno de ejecución:** Windows PowerShell / Batch / Android ADB (Platform Tools).
+
+## Estructura del Proyecto
+- `setup_tools.ps1`: Descarga y aprovisiona automáticamente los binarios oficiales de Android ADB en `tools/platform-tools/`.
+- `firetv_manager.bat`: Menú visual interactivo de 1-clic con 12 funciones integradas.
+- `sync_suite.ps1`: Sincronizador bidireccional entre el repositorio local y la skill global de Antigravity (`firetv-reloaded`).
+- `scripts/`:
+  - `01_connect.ps1`: Emparejamiento remoto ADB vía IP y validación de huella RSA.
+  - `02_audit_packages.ps1`: Inspección de hardware, versión de Fire OS y volcado de paquetes del sistema a `logs/`.
+  - `03_debloat_safe.ps1`: Desactivación no destructiva de bloatware (`pm disable-user --user 0`), manteniendo el Launcher oficial intacto.
+  - `04_dns_adblock.ps1`: Inyección de Private DNS (AdGuard DNS) para bloqueo de anuncios y telemetría a nivel de host.
+  - `05_install_apk.ps1`: Gestor de sideloading masivo/directo para archivos `.apk` en `apks/`.
+  - `06_optimize_ui.ps1`: Modificación de escalas de animación a 0.5x para agilizar la navegación con el mando.
+  - `07_uninstall_custom_apps.ps1`: Desinstalación limpia de aplicaciones pesadas/innecesarias especificadas por el usuario.
+  - `08_close_background_apps.ps1`: Cierre forzado de procesos en segundo plano y purga de memoria RAM.
+  - `09_deep_cache_cleanup.ps1`: Limpieza profunda de cachés residuales, miniaturas y buffers (`pm trim-caches`) sin alterar logins.
+  - `99_restore_all.ps1`: Protocolo de reversión total a valores de fábrica y reactivación de servicios.
+- `apks/`: Directorio local para colocar paquetes APK antes de su despliegue al televisor.
+
+## Reglas de Seguridad
+1. **No Destructivo:** Nunca se utiliza `pm uninstall` sobre paquetes del sistema; se utiliza congelamiento a nivel de usuario (`pm disable-user --user 0`), lo que previene fallos de arranque o bootloops.
+2. **Reversibilidad Garantizada:** Cualquier cambio en animaciones, DNS o servicios desactivados puede revertirse en cualquier momento mediante `scripts/99_restore_all.ps1`.
+3. **Preservación del Launcher:** Se mantiene `com.amazon.tv.launcher` intacto a menos que se configure intencionalmente un launcher alternativo.
