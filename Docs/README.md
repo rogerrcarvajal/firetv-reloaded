@@ -9,6 +9,7 @@ Este directorio almacena los planes técnicos, bitácoras de avance, reportes de
 | Documento | Descripción | Fase / Estado |
 | :--- | :--- | :---: |
 | **[`firetv_optimization_plan.md`](./firetv_optimization_plan.md)** | Plan técnico inicial de conexión, diagnóstico de red y arquitectura de debloat seguro sin pérdida del Launcher oficial. | Planificación Aprobada |
+| **[`optimizacion_firetv_4k_mary_reporte.md`](./optimizacion_firetv_4k_mary_reporte.md)** | Reporte de optimización completa, debloat y purga de apps en Fire TV Stick 4K de Mary (Fire OS 6). | Hito Completado |
 | **[`Hito Final - Publicación en GitHub y Base de Conocimiento Graphify_walkthrough.md`](./Hito%20Final%20-%20Publicaci%C3%B3n%20en%20GitHub%20y%20Base%20de%20Conocimiento%20Graphify_walkthrough.md)** | Bitácora de cierre con los resultados de optimización, publicación del repositorio y extracción del grafo con Graphify. | Hito Completado |
 
 ---
