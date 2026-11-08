@@ -1,0 +1,74 @@
+{
+  "scripts/01_connect.ps1": {
+    "mtime": 1794107567.6375604,
+    "seen": 1794112957.2492123,
+    "ast_hash": "7ff54ed174a11c360bbd095917b39b49",
+    "semantic_hash": "7ff54ed174a11c360bbd095917b39b49"
+  },
+  "scripts/02_audit_packages.ps1": {
+    "mtime": 1794107573.018008,
+    "seen": 1794112957.2492123,
+    "ast_hash": "5d5561c817682d9e4f9adfa714823664",
+    "semantic_hash": "5d5561c817682d9e4f9adfa714823664"
+  },
+  "scripts/03_debloat_safe.ps1": {
+    "mtime": 1794108433.9722345,
+    "seen": 1794112957.2492123,
+    "ast_hash": "d38d7816bf928dc42bd54db9eeeb4d76",
+    "semantic_hash": "d38d7816bf928dc42bd54db9eeeb4d76"
+  },
+  "scripts/04_dns_adblock.ps1": {
+    "mtime": 1794108407.9684107,
+    "seen": 1794112957.2492123,
+    "ast_hash": "a98ee62bb241d0f80ac5392ebe1dcd9f",
+    "semantic_hash": "a98ee62bb241d0f80ac5392ebe1dcd9f"
+  },
+  "scripts/05_install_apk.ps1": {
+    "mtime": 1794107592.765556,
+    "seen": 1794112957.2492123,
+    "ast_hash": "9c285463ca7a6e8a163d55b2a67ef022",
+    "semantic_hash": "9c285463ca7a6e8a163d55b2a67ef022"
+  },
+  "scripts/06_optimize_ui.ps1": {
+    "mtime": 1794108411.5923042,
+    "seen": 1794112957.2492123,
+    "ast_hash": "68d3a57d1e53092693d4a6e0c4d8f2b0",
+    "semantic_hash": "68d3a57d1e53092693d4a6e0c4d8f2b0"
+  },
+  "scripts/07_uninstall_custom_apps.ps1": {
+    "mtime": 1794108357.3241415,
+    "seen": 1794112957.2492123,
+    "ast_hash": "83046efe0a5f058adc875208c1df505f",
+    "semantic_hash": "83046efe0a5f058adc875208c1df505f"
+  },
+  "scripts/08_close_background_apps.ps1": {
+    "mtime": 1794111586.2674363,
+    "seen": 1794112957.2492123,
+    "ast_hash": "4446824803efcfe62db0fcbcf783d057",
+    "semantic_hash": "4446824803efcfe62db0fcbcf783d057"
+  },
+  "scripts/09_deep_cache_cleanup.ps1": {
+    "mtime": 1794111836.5951905,
+    "seen": 1794112957.2492123,
+    "ast_hash": "1c5fde31d787ec54143f9f0e8360f849",
+    "semantic_hash": "1c5fde31d787ec54143f9f0e8360f849"
+  },
+  "scripts/99_restore_all.ps1": {
+    "mtime": 1794107603.7579975,
+    "seen": 1794112957.2492123,
+    "ast_hash": "66b3a50552072462f908167c542073c0",
+    "semantic_hash": "66b3a50552072462f908167c542073c0"
+  },
+  "setup_tools.ps1": {
+    "mtime": 1794107453.0760596,
+    "seen": 1794112957.2492123,
+    "ast_hash": "e9af46f84c37ecb62143fb1baad11cd5",
+    "semantic_hash": "e9af46f84c37ecb62143fb1baad11cd5"
+  },
+  "sync_suite.ps1": {
+    "mtime": 1794111855.315192,
+    "seen": 1794112957.2492123,
+    "ast_hash": "88279a85d594d92041a032fcf5748221",
+    "semantic_hash": "88279a85d594d92041a032fcf5748221"
+  }
+}

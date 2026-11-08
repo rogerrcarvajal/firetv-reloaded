@@ -1,0 +1,60 @@
+{
+  "communities": {
+    "0": [
+      "scripts_01_connect"
+    ],
+    "1": [
+      "scripts_02_audit_packages"
+    ],
+    "2": [
+      "scripts_03_debloat_safe"
+    ],
+    "3": [
+      "scripts_04_dns_adblock"
+    ],
+    "4": [
+      "scripts_05_install_apk"
+    ],
+    "5": [
+      "scripts_06_optimize_ui"
+    ],
+    "6": [
+      "scripts_07_uninstall_custom_apps"
+    ],
+    "7": [
+      "scripts_08_close_background_apps"
+    ],
+    "8": [
+      "scripts_09_deep_cache_cleanup"
+    ],
+    "9": [
+      "scripts_99_restore_all"
+    ],
+    "10": [
+      "setup_tools"
+    ],
+    "11": [
+      "sync_suite"
+    ]
+  },
+  "cohesion": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0
+  },
+  "gods": [],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
