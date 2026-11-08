@@ -148,5 +148,5 @@ Este proyecto se distribuye bajo la licencia **MIT**. Puedes usarlo, modificarlo
 ---
 
 <div align="center">
-Desarrollado con ❤️ por <b>Rogerr Carvajal</b> | Impulsado por <b>Google Antigravity & Gemini</b>
+Desarrollado con ❤️ por <b>Roger R. Carvajal</b> | Impulsado por <b>Google Antigravity & Gemini</b>
 </div>
