@@ -10,6 +10,7 @@ FireTV-Reloaded es una suite de ingeniería creada para conectar computadoras de
 - **Entorno de ejecución:** Windows PowerShell / Batch / Android ADB (Platform Tools).
 
 ## Estructura del Proyecto
+- `Docs/`: Centro de documentación con planes de ejecución técnica e informes de hitos.
 - `setup_tools.ps1`: Descarga y aprovisiona automáticamente los binarios oficiales de Android ADB en `tools/platform-tools/`.
 - `firetv_manager.bat`: Menú visual interactivo de 1-clic con 12 funciones integradas.
 - `sync_suite.ps1`: Sincronizador bidireccional entre el repositorio local y la skill global de Antigravity (`firetv-reloaded`).

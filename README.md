@@ -76,6 +76,10 @@ flowchart TD
 ```text
 amazon-firetv/
 ├── apks/                     # Directorio para colocar archivos .apk a instalar
+├── Docs/                     # Centro de documentación técnica, planes e hitos
+│   ├── firetv_optimization_plan.md
+│   ├── Hito Final...walkthrough.md
+│   └── README.md             # Índice estructurado de documentación
 ├── scripts/
 │   ├── 01_connect.ps1        # Conexión remota por IP y autorización RSA
 │   ├── 02_audit_packages.ps1 # Auditoría y volcado de paquetes del dispositivo
