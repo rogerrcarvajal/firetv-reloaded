@@ -1,4 +1,6 @@
 $adb = "c:\xampp\htdocs\amazon-firetv\tools\platform-tools\adb.exe"
+. "$PSScriptRoot\common_adb.ps1"
+Ensure-AdbConnected -AdbPath $adb
 $logsDir = "c:\xampp\htdocs\amazon-firetv\logs"
 $debloatLog = "$logsDir\debloated_packages.txt"
 

@@ -1,5 +1,6 @@
 $adb = "c:\xampp\htdocs\amazon-firetv\tools\platform-tools\adb.exe"
-& $adb connect 10.10.10.28:5555 | Out-Null
+. "$PSScriptRoot\common_adb.ps1"
+Ensure-AdbConnected -AdbPath $adb
 
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host "       ACELERACION DE INTERFAZ Y RESPUESTA DEL MANDO       " -ForegroundColor Yellow
