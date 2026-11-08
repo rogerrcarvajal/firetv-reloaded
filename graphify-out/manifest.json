@@ -12,10 +12,10 @@
     "semantic_hash": "5d5561c817682d9e4f9adfa714823664"
   },
   "scripts/03_debloat_safe.ps1": {
-    "mtime": 1794108433.9722345,
-    "seen": 1794112957.2492123,
-    "ast_hash": "d38d7816bf928dc42bd54db9eeeb4d76",
-    "semantic_hash": "d38d7816bf928dc42bd54db9eeeb4d76"
+    "mtime": 1794114850.3090358,
+    "seen": 1794114886.5205493,
+    "ast_hash": "e9219ace75d1e38c1ea227b5d031a04e",
+    "semantic_hash": "e9219ace75d1e38c1ea227b5d031a04e"
   },
   "scripts/04_dns_adblock.ps1": {
     "mtime": 1794108407.9684107,
